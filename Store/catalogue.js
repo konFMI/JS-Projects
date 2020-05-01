@@ -56,9 +56,7 @@ let itemsInfo = [
         'Boiler : 300',
         'Apple : 1.25',
         'Anti-Bug Spray : 15',
-        'T-Shirt : 10'
-    ],
-    [
+        'T-Shirt : 10',
         'Banana : 2',
         'Rubic\'s Cube: 5 ',
         'Raspberry P : 4999',
