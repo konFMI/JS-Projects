@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FromJSONToHTMLTable</title>
+    <style>
+        table,
+        th {
+            border: groove;
+            border-collapse: collapse;
+        }
+        
+        td {
+            border: 1px solid black;
+        }
+        
+        td,
+        th {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+    </div>
+    <script>
+        function JSONToHTMLTable(arrayOfJSON) {
+            let htmlTable = '';
+            htmlTable += '<table>\n';
+
+            let htmlEntitiesEncoder = (text) => {
+                let htmlText = text;
+                text += '';
+
+                if (text.includes('&')) {
+                    htmlText = text.replace(/&/g, '&amp;');
+                }
+                if (text.includes('<')) {
+                    htmlText = text.replace(/</g, '&lt;');
+                }
+                if (text.includes('>')) {
+                    htmlText = text.replace(/>/g, '&gt;');
+                }
+                if (text.includes('"')) {
+                    htmlText = text.replace(/"/g, '&quot;');
+                }
+                if (text.includes('\'')) {
+                    htmlText = text.replace(/\'/g, '&apos;');
+                }
+
+                return htmlText;
+            };
+            let addTableData = (data) => {
+                htmlTable += `\t\t<td>${data}</td>\n`;
+            };
+            let addTableRow = (json) => {
+
+                htmlTable += '\t<tr>\n';
+
+                let obj = JSON.parse(json);
+                let objKeys = Object.keys(obj);
+
+                objKeys.forEach(key => {
+                    addTableData(htmlEntitiesEncoder(obj[key]));
+                });
+
+                htmlTable += '\t</tr>\n';
+
+            };
+
+            arrayOfJSON.forEach(json => {
+                addTableRow(json);
+            });
+
+            htmlTable += '</table>';
+            return htmlTable;
+        }
+        window.onload = function() {
+            let container = document.getElementById('wrapper');
+            container.innerHTML = JSONToHTMLTable(['{"name":"Pesho","position":"Promenliva","salary":100000}',
+                '{"name":"Teo","position":"Lecturer","salary":1000}',
+                '{"name":"Georgi","position":"Lecturer","salary":1000}',
+                '{"family":"Kolevite","familyHouse":"Medkovec"}'
+            ]);
+        };
+    </script>
+</body>
+
+</html>
