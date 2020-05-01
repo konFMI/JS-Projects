@@ -49,7 +49,7 @@ function cappyJuice(juiceData) {
 
     });
     let output = Object.keys(producedBottles).reduce((acc, name) => {
-        acc.push(`${name}=>${producedBottles[name]}`);
+        acc.push(`${name} => ${producedBottles[name]}`);
         return acc;
     }, []);
     return output.join('\n');
