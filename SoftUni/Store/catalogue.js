@@ -47,9 +47,15 @@ function catalogue(itemsInfo) {
 
     return sortedCatalog(catalogue);
 }
+
+
+
+
+
 let itemsInfo = [
     [
         'Appricot : 20.4',
+        'masa : 123',
         'Fridge : 1500',
         'TV : 1499',
         'Deodorant : 10',

@@ -1,0 +1,14 @@
+                                                    *************
+                                                    * Usernames *
+                                                    *************
+You are tasked to create a catalogue of usernames. The usernames will be strings that may contain any ASCII character.
+ You need to order them by their length, in ascending order, as first criteria, and by alphabetical order as second criteria. 
+*********
+* Input *
+*********
+The input comes as array of strings. Each element represents a username. Sometimes the input may contain duplicate usernames. 
+Make it so that there are NO duplicates in the output.
+                                                                                        **********
+                                                                                        * Output *
+                                                                                        **********
+The output is all of the usernames, ordered exactly as specified above – each printed on a new line.
