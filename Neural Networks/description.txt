@@ -1,0 +1,2 @@
+This is a demo from a book. Still in the process of learning it but it seems not so complicated as i thought it would.
+This is a link to the site: https://www.syncfusion.com/ebooks/neuralnetworks
