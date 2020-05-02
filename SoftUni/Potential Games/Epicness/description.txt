@@ -1,0 +1,1 @@
+For more information read ..\SoftUni\'Description of problems'\JS-Advanced-Objects-Exercise, problem '*Game of Epicness'.
