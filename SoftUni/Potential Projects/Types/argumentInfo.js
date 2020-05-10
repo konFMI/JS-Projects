@@ -10,9 +10,9 @@ function argumentInfo() {
         let value = String(arguments[i]);
 
         typesRepository.push(`${type}: ${value}`);
-        let keys = Object.keys(countTypes);
-        if (!keys.includes(type)) {
-            Object.defineProperty(countTypes, type, { value: 0, enumerable: true, writable: true });
+        if (!countTypes.hasOwnProperty(type)) {
+            //Object.defineProperty(countTypes, type, { value: 0, enumerable: true, writable: true });
+            countTypes[type] = 0;
         }
 
         countTypes[type] += 1;
